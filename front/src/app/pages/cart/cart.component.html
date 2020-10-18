@@ -1,0 +1,50 @@
+<h1 class="text-center" style="padding-top:30px">Cart Details</h1>
+<hr>
+<br>
+<br>
+<div class="container">
+<table class="table">
+	<tr class="table-primary">
+		<td>S.no</td>
+		<td>Pname</td>
+		<td>Brand</td>
+		<td>Price</td>
+		<td>Quantity</td>
+		<td>Size</td>
+		<td>Colour</td>
+		<td>Total</td>
+		<td>Action</td>
+	</tr>
+	<tr *ngFor="let c of cartData;let i=index">
+    <td>{{i+1}}</td>
+    <td>{{c.pname}}</td>
+    <td>{{c.brand}}</td>
+    <td>{{c.price}}</td>
+    <td>{{c.qty}}</td>
+    <td>{{c.size}}</td>
+    <td>{{c.color}}</td>
+    <td>{{c.total}}</td>
+    <td>
+    	<input type="submit" value="Remove from cart" class="btn btn-danger" (click)="remCart(c.pname)">
+    </td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<th>Grand Total :</th>
+		<th>{{gtotal}}</th>
+	</tr>
+	<hr>
+	 
+</table>
+ <input id="number" type="number" min="0" max="10" >
+<input routerLink="/placeorder" type="submit" value="Place order" class="btn btn-success" style="margin-left:900px">
+<hr>
+<br>
+<br>
+
+</div>

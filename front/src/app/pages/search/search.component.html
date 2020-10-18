@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+<div  class="col-lg-3" *ngFor="let c of serData">
+	<img src="http://localhost:7788/images/{{c.image}}" width=250 height=250 alt="img" height="500" width="500" style="padding-top:50px;padding-left:30px;padding-bottom:50px">    
+	 <div class="product-description" style="padding-left: 10px">
+                                <span><h4>{{c.brand}}</h4></span>
+                                    <h6 style="font-size:20px">{{c.pname}}</h6>
+                               
+                                <h6 style="font-size:20px">Rs.{{c.price}}</h6>
+
+                                
+                                <div>
+                                 
+                                    <div class="add-to-cart-btn" >
+                                        <a routerLink="../shop/productdetails/{{c.pname}}" class="btn essence-btn">view more details</a>
+                                    </div>
+                                </div>
+                            </div>
+</div>
+<div *ngIf="!serData">
+	No products found
+	</div>
+</div>
+</div>

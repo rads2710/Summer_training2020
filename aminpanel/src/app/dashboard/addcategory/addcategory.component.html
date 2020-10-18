@@ -1,0 +1,28 @@
+<h1>Add Category</h1>
+<form [formGroup]="myForm" (ngSubmit)="addFormCategory()">
+    <div class="form-group">
+        <label>Cname</label>
+       <input type="text" class="form-control" formControlName="cname"> 
+    </div>
+    <div class="form-group">
+            <label>Description</label>
+            <textarea  formControlName="description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+            <label>Image</label>
+            
+               
+            <input type="file" class="form-control"  (change)="fileUpload($event)"/>
+        
+            
+    </div>
+    <div class="form-group">
+       <pre>Gender : </pre>
+        <input type="radio" name="gender" value="Male" (change)="radioChangeHandler($event)">
+        <i> Male   </i>
+         <input type="radio" name="gender" value="Female" (change)="radioChangeHandler($event)">
+        <i> Female</i>
+
+    </div>
+    <input type="submit" value="Submit" class="btn btn-success" [disabled]="myForm.invalid"/>
+</form>

@@ -1,0 +1,58 @@
+<h1 class=text-center>Products</h1>
+<hr>
+<br>
+<a routerLink="../addproducts" class="btn btn-success">Add product</a>
+<br>
+<br>
+<div>
+    <label>Choose category :</label>
+</div>
+<div>
+	<form [formGroup]="myForm" (ngSubmit)="filter()">
+		<div class="form-group">
+    <select formControlName="xyz">
+        <option *ngFor="let c of catData" value="{{c.cname}}">{{c.cname}}</option>
+         <option>All products</option>
+    </select>
+</div>
+<input type="submit" value="Apply filter" class="btn btn-success"/>
+</form>
+
+</div>    
+
+<br>
+<br>
+<table class="container table" >
+    
+    <tr class="table-secondary">
+        <td>S.no</td>
+        <td>Pname</td>
+        <td>Cname</td>
+        <td>Description</td>
+        <td>Image</td>
+          <td>Brand</td>
+            <td>Price</td>
+        <td>Created At</td>
+        <td>Action</td>
+    </tr>
+    <tr *ngFor="let p of proData;let i=index">
+    	<td>{{i+1}}</td>
+    	<td>{{p.pname}}</td>
+    	<td>{{p.category}}</td>
+    	<td>{{p.description}}</td>
+    	<td><img src="http://localhost:7788/images/{{p.image}}" width=50 height=50/></td>
+    	<td>{{p.brand}}</td>
+    	<td>{{p.price}}</td>
+    	<td>{{p.created_at|date}}</td>
+    	<td>
+            <a routerLink="../editproduct/{{p._id}}" class="btn btn-info">Update <i class="fa fa-edit"></i></a> 
+            <!--  <input type="button" value="Delete" class="btn btn-danger" (click)="delcat(c._id)"/>  -->
+            <button class="btn btn-danger" (click)="delpro(p._id)">Delete <i class="fa fa-trash-o"></i></button>
+         </td>
+     </tr>
+     <tr *ngIf="proData.length==0">
+     	<td colspan=6 class="text-center">
+     		No category found
+     	</td>
+     </tr>
+</table>

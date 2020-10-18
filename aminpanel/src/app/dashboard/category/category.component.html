@@ -1,0 +1,39 @@
+<h1 class=text-center>Categories</h1>
+<hr>
+<table class="container table" >
+    <tr>
+       <!--  <td colspan=6 class="text-center">
+            <a routerLink="../addcategory" class="btn btn-danger">Add category</a>
+        </td> -->
+    </tr>
+    <tr class="table-secondary">
+        <td>S.no</td>
+        <td>Cname</td>
+        <td>Description</td>
+        <td>Image</td>
+        <td>Created At</td>
+        <td>Action</td>
+    </tr>
+
+    <tr *ngFor="let c of catData; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{c.cname}}</td>
+        <td>{{c.description}}</td>
+        <td><img src="http://localhost:7788/images/{{c.image}}" width=50 height=50/></td>
+        <td>{{c.created_at|date}}</td>
+        <td>
+            <a routerLink="../editcategory/{{c._id}}" class="btn btn-info">Update <i class="fa fa-edit"></i></a> 
+            <!--  <input type="button" value="Delete" class="btn btn-danger" (click)="delcat(c._id)"/>  -->
+            <button class="btn btn-danger" (click)="delcat(c._id)">Delete <i class="fa fa-trash-o"></i></button>
+         </td>
+    </tr>
+    <tr *ngIf="catData.length==0">
+        <td colspan=6 class="text-center">
+            No category found
+        </td>
+    </tr>
+</table>
+<br>
+<div class="text-center">
+<a routerLink="../addcategory" class="btn btn-success">Add category</a>
+</div>

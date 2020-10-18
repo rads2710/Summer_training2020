@@ -1,0 +1,19 @@
+#abc:after{
+	display:block;
+	content:"";
+	clear:both;
+}
+#pqr
+{
+	background-color:yellow;
+	float:right;
+	padding:40px;font-size:30px
+
+}
+#xyz
+{
+	background-color:skyblue;
+	float:left;
+	padding:40px;font-size:30px
+	
+}

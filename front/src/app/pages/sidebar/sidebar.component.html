@@ -1,0 +1,14 @@
+<table class="table">
+    <th style="font-size:30px">Categories</th>
+    <tr>
+     <th style="font-size:20px">Womens</th>
+     <hr>
+ </tr>
+    <tr *ngFor="let c of catData" class="table-info" >
+        <td ><a routerLink="catpro/{{c.cname}}" style="font-size:15px">{{c.cname}}</a></td>
+    </tr>
+     <th style="font-size:20px">Mens</th>
+        <tr *ngFor="let p of catDataMen" class="table-info" >
+        <td ><a routerLink="catpro/{{p.cname}}" style="font-size:15px">{{p.cname}}</a></td>
+    </tr>
+</table>

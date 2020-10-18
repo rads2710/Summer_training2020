@@ -1,0 +1,52 @@
+<header>
+
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <a class="navbar-brand " href="#"><i class="fa fa-user-plus" style="font-size:40px;color:white"></i> Admin Panel</a> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+       <li class="nav-item active">
+        <a class="nav-link" href="/dashboard"><i class="fa fa-user" style="font-size:24px"></i> Welcome:{{userId}}</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink='changepassword'>Change Password <i class="fa fa-unlock" style="font-size:24px"></i><span class="sr-only">(current)</span></a>
+      </li>
+     
+      <li class="nav-item active">
+        <a class="nav-link " href="javascript:void()" (click)="signOut()">logout <i class="fa fa-power-off" style="font-size:24px"></i></a>
+      </li>
+     
+    </ul>
+  </div>
+</nav>
+
+</header>
+<br>
+
+<section>
+  <div class="row">
+     <aside class="col-sm-3">
+       <!--  <ul class="list-group">
+            <li class="list-group-item bg-secondary"><a routerLink='category' class="text-white"><i class="fa fa-bars" style="font-size:24px"></i> Category</a></li>
+            <li class="list-group-item bg-secondary"><a routerLink='./product' class=text-white><i class="fa fa-gift" style="font-size:24px"></i> Product</a></li>
+            <li class="list-group-item bg-secondary "><a href="#" class=text-white> 
+            <i class="fa fa-pencil-square-o" style="font-size:24px"></i> Feedback</a></li>
+          </ul> -->
+
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+  <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" routerLink='./' role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa fa-home" style="font-size:24px"></i> Home</a>
+  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" routerLink='category' role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fa fa-bars" style="font-size:24px"></i> Category</a>
+  <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" routerLink='./product' role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa fa-gift" style="font-size:24px"></i> Product</a>
+  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" routerLink='feedback' role="tab" aria-controls="v-pills-settings" aria-selected="false">  <i class="fa fa-pencil-square-o" style="font-size:24px"></i> Feedback</a>
+  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" routerLink='orders' role="tab" aria-controls="v-pills-settings" aria-selected="false">  <i class="fa fa-cart-plus" style="font-size:24px"></i> Recieved orders</a>
+
+</div>
+     </aside>
+  <aside class="col-sm-9">
+          <router-outlet></router-outlet>
+  </aside>
+</div>
+</section>

@@ -1,0 +1,68 @@
+<h1 class="text-center" style="padding-top:30px">Product Details</h1>
+<hr>
+<section class="single_product_details_area d-flex align-items-center">
+
+        <!-- Single Product Thumb -->
+       <!--  <div class="single_product_thumb clearfix">
+            <div class="product_thumbnail_slides owl-carousel">
+                <img src="img/product-img/product-big-1.jpg" alt="">
+                <img src="img/product-img/product-big-2.jpg" alt="">
+                <img src="img/product-img/product-big-3.jpg" alt="">
+            </div>
+        </div> -->
+
+        <!-- Single Product Description -->
+        <div class=container>
+            <div class="row" *ngFor="let c of prodata" >
+         <div class="col-4">
+        <img src="http://localhost:7788/images/{{c.image}}" width=250 height=250 alt="img" height="500" width="500" style="padding-top:50px;padding-left:30px;padding-bottom:50px">    
+        </div>
+        <div  class="single_product_desc clearfix" class="col-8" style="padding-top:50px">
+            <h4>Brand :</h4>
+            <p style="font-size:20px">{{c.brand}}</p>
+                <h4>Product name :</h4>
+                <p style="font-size:20px">{{c.pname}}</p>
+                <h4>Price :</h4>
+            <p class="product-price" style="font-size:20px">Rs.{{c.price}}</p>
+            <h4 class="product-desc">Description :</h4>
+            <p style="font-size:20px">{{c.description}}</p>
+
+            <!-- Form -->
+            <form [formGroup]="myForm" class="cart-form clearfix" method="post" (ngSubmit)="fun()">
+                <!-- Select Box -->
+                <div class="select-box d-flex mt-50 mb-30">
+                    <pre style="font-size:15px">select size : </pre>
+                    <select name="select" id="productSize" class="mr-5" formControlName="size">
+                        <option selected disabled hidden>select size</option>
+                        <option value="XL">Size: XL</option>
+                        <option value="L">Size: L</option>
+                        <option value="M">Size: M</option>
+                        <option value="S">Size: S</option>
+                    </select>
+                     <pre style="font-size:15px">select colour : </pre>
+                    <select name="select" id="productColor" formControlName="color">
+                        <option value="Black">Color: Black</option>
+                        <option value="White">Color: White</option>
+                        <option value="Red">Color: Red</option>
+                        <option value="Purple">Color: Purple</option>
+                    </select>
+                    <pre>    </pre>
+                    <span>
+                    <label>Qty :</label>
+                    <input type="number" min="0" max="10" value="0" step="1" formControlName="qty">
+                    </span>
+                </div>
+                <!-- Cart & Favourite Box -->
+                <div class="cart-fav-box d-flex align-items-center" style="padding-bottom: 30px">
+                    <!-- Cart -->
+                    <button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
+                    <!-- Favourite -->
+                    
+                </div>
+            </form>
+        </div>
+       
+    </div>
+</div>
+
+    </section>

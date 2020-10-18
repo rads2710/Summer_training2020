@@ -1,0 +1,14 @@
+<h1 class="text-center" style="margin-bottom:30px;">Customers feedbacks</h1>
+<div class="container">
+<table class="table">
+	<tr class="table-success" *ngFor="let c of feedData">
+		<span style="margin-left:20px;margin-top: 20px;">Name : </span>{{c.name}}<br>
+		<span style="margin-left:20px;">Email : </span>{{c.email}}<br>
+		<span style="margin-left:20px;">Subject : </span>{{c.subject}}<br>
+		<span style="margin-left:20px;">Message : </span>{{c.message}}<br>
+		<span style="margin-left:20px;">Date : </span>{{c.created_at}}<br>
+	  <br>
+	  <br>
+	</tr>
+</table>
+</div>

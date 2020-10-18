@@ -1,0 +1,55 @@
+<h1 class="text-center">Contact Us</h1>
+<hr/>
+<div class="container">
+	<div class="row">
+		<div class="col-4">
+		<div>
+			
+			
+			<h5><i class="fa fa-home" style="font-size:36px"></i> Address :</h5>
+		
+			<p>1010 Berkler Avenue, Brooklyn New York City, NY 10018 US</p>
+		</div>
+		<br>
+		<br>
+		<div><h5><i class="fa fa-volume-control-phone" style="font-size:36px"></i> Contact Number:</h5>
+			<p> +212 386 5575<br>+212 386 5575</p>
+		</div>
+		<br>
+		<br>
+		<div><h5><i class="fa fa-envelope-o" style="font-size:36px"></i> Email :</h5></div>
+		<p>shopping_fam@gmail.com</p>
+	</div>
+
+	<div class="col-8">
+		<form [formGroup]="myForm" (ngSubmit)="send()">
+			<div class="form-group">
+			<!-- <label>Name:</label> -->
+			<input type="text" class="form-control" formControlName="name" placeholder="Name">
+			</div>
+			<br>
+			<div class="form-group">
+			<!-- <label>Email:</label> -->
+			<input type="text" class="form-control" formControlName="email" placeholder="Email">
+			</div>
+			<br>
+			<div class="form-group">
+			<!-- <label>Subject:</label> -->
+			<input type="text" class="form-control" formControlName="subject" placeholder="Subject">
+			</div>
+			<br>
+			<div class="form-group">
+			<!-- <label>Message:</label> -->
+			<input type="text" class="form-control" formControlName="message" placeholder="Message">
+			</div>
+			<br>
+      <input type="submit" value="Submit" class="btn btn-info btn-radius btn-brd grd4 btn-block">
+		</form>
+	</div>
+
+</div>
+<br>
+	<br>
+	<br>
+	<br>
+</div>

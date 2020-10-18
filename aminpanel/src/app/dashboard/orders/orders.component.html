@@ -1,0 +1,29 @@
+<h1 class="text-center" style="padding-top:30px">My Orders</h1>
+<hr>
+<br>
+<div class="container-fluid">
+<table class="table">
+	<tr class="table-primary">
+		<td>S.no</td>
+		<td>Pname</td>
+		<td>Price</td>
+		<td>Qty</td>
+		<td>Size</td>
+		<td>Brand</td>
+		<td>Colour</td>
+		<td>Status</td>
+		<td>Action</td>
+	</tr>
+	<tr *ngFor="let c of orderData;let i=index">
+		<td>{{i+1}}</td>
+		<td>{{c.pname}}</td>
+		<td>{{c.price}}</td>
+		<td>{{c.qty}}</td>
+		<td>{{c.size}}</td>
+		<td>{{c.brand}}</td>
+		<td>{{c.color}}</td>
+		<td>{{c.status}}</td>
+		<td><input type="submit" class="btn btn-success" value="Mark as Delivered" (click)="changeStatus(c._id)"/></td>
+	</tr>
+</table>
+</div>
